@@ -11,6 +11,7 @@
 **S.E.M (SSL Expiry Monitor)** is a web-based ops tool designed to provide a "Digital Sanctuary" for system administrators. It tracks SSL certificate expiration dates across multiple domains, offering a high-fidelity, minimalist dashboard with real-time countdowns and visual status alerts.
 
 ### ✨ Key Features
+
 - **Dashboard Explorer**: View all monitored websites in a single, elegant grid.
 - **SSL Countdown**: Real-time tracking of days remaining until certificate expiry.
 - **Visual Status Badges**:
@@ -56,8 +57,6 @@ npm run dev
 ---
 
 ## 🎨 Design Philosophy
+
 S.E.M follows the **Zen Obsidian** aesthetic — prioritizing "Digital Sanctuary" principles: zero clutter, radical whitespace, and high-contrast typography to ensure critical security information is never missed.
 
----
-
-Created with ❤️ by **Antigravity AI**
