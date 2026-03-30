@@ -1,67 +1,59 @@
-# S.E.M — SSL Expiry Monitor · Roadmap
+# S.E.M (SSL Expiry Monitor) - Roadmap
 
-> **Status:** 🚧 In Development  
-> **Current Phase:** Phase 1 — Foundation (MVP)  
-> **Last Updated:** 2026-03-15
+> **Status:** 🏗️ Foundation/Setup
+> **Current Phase:** Phase 1 - Foundation & Scaffolding
+> **Last Updated:** 2026-03-30
 
 ---
 
 ## Progress Overview
 
 ```
-Phase 1: Foundation (MVP)    ░░░░░░░░░░  0%
-Phase 2: Alerts & Persistence ░░░░░░░░░░  0%
+Phase 1: Foundation           ██░░░░░░░░ 20%
+Phase 2: Core Logic           ░░░░░░░░░░  0%
+Phase 3: Dashboard UI         ░░░░░░░░░░  0%
+Phase 4: Notifications        ░░░░░░░░░░  0%
 ```
 
 ---
 
-## Phase 1: Foundation (MVP) 🏗️
+## Phase 1: Foundation 🏗️
 
-**Goal:** Build the core dashboard — add domains, check SSL expiry, show status at a glance.
+**Goal:** Initialize the Vue 3 project with a high-end design system.
 
-- [ ] Bootstrap Vue 3 + Vite + TypeScript project
-- [ ] Install and configure Tailwind CSS v4
-- [ ] Install and configure PrimeVue 4
-- [ ] Set up Pinia store and Vue Router
-- [ ] Create domain list state management
-- [ ] Build clean dashboard layout (sortable/filterable list)
-- [ ] Implement Add/Remove website functionality
-- [ ] Fetch SSL certificate expiry date per domain
-- [ ] Show days remaining with countdown
-- [ ] Visual status badges: ✅ Safe / ⚠️ Expiring Soon / 🔴 Expired
+- [x] Initial Project Setup
+- [x] Agent Symlinks & Bootstrap
+- [ ] Scaffold Vue 3 (Vite + TS)
+- [ ] Install Tailwind CSS v4
+- [ ] Install PrimeVue 4
 
 ---
 
-## Phase 2: Alerts & Persistence 🔥
+## Phase 2: Core Logic 🔥
 
-**Goal:** Add Firebase persistence and multi-channel alert notifications.
-
-- [ ] Firebase integration for data persistence
-- [ ] Alert at 3 months, 2 months, 1 month before expiry
-- [ ] Weekly alerts within the final month
-- [ ] Alert channels: Email / WhatsApp / Browser Notification
+- [ ] SSL Data Fetching
+- [ ] Domain Expiry Monitoring
+- [ ] Periodic Checks
 
 ---
 
 ## Future Enhancements 💡
 
-*Features to consider after Phase 2:*
-
-- Bulk import domains from CSV
-- SSL issuer & chain info display
-- Historical expiry tracking & charts
-- Team/multi-user support
+- Multi-tenant support
+- Custom domain API
+- Slack/WhatsApp integrations
 
 ---
 
 ## Notes
 
 **Tech Stack:**
-- Vue 3 (Composition API, `<script setup>`) · TypeScript · Vite
-- Tailwind CSS v4 · PrimeVue 4 · Pinia · Vue Router
-- Firebase *(Phase 2 — optional for MVP)*
+- Vue 3 (Composition API)
+- Vite + TypeScript
+- Tailwind CSS v4
+- PrimeVue 4
+- Pinia (State Management)
 
 **Key Milestones:**
-- ✅ Project initialized — 2026-03-15
-- 🎯 MVP (Phase 1) complete: TBD
-- 🎯 Alerts live (Phase 2): TBD
+- ✅ Project Bootstrapped: 2026-03-30
+- 🎯 Initial UI Dashboard: TBD
