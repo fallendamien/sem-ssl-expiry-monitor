@@ -1,10 +1,16 @@
 # Antigravity Project Context
 
+## Communication Preferences
+
+- Prefer visually engaging responses with clear structure when helpful.
+- Use relevant emojis for headings, status, and scannability instead of plain wall-of-text responses.
+- Keep technical explanations clear, but make the presentation feel lively and easy to scan.
+
 ## Rule: change-summary-rule
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Change Summary Rule
 
@@ -39,14 +45,13 @@ End with a quick reference:
 
 Help the user follow the flow, understand the 'why', and learn patterns.
 
-
 ---
 
 ## Rule: code-redundancy-detection
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Code Redundancy Detection Protocol
 
@@ -199,14 +204,13 @@ Proposing extraction to: src/composables/useFormatProjectName.ts
 Estimated reduction: ~60 lines
 ```
 
-
 ---
 
 ## Rule: coding-standards
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Coding Standards
 
@@ -268,21 +272,20 @@ When working with modern frameworks (Vue, React, Laravel, Next.js, etc.):
 
 When this rule triggers, auto-load these skills:
 
-| Skill                 | Path                                          | Purpose                                         |
-| :-------------------- | :-------------------------------------------- | :---------------------------------------------- |
-| **clean-code**        | `.agent/skills/clean-code/SKILL.md`        | Pragmatic coding standards, no over-engineering |
-| **typescript-expert** | `.agent/skills/typescript-expert/SKILL.md` | Type-level programming and strict type safety   |
-| **vue-patterns**      | `.agent/skills/vue-patterns/SKILL.md`      | Vue 3 Composition API patterns and reactivity   |
-| **pinia-patterns**    | `.agent/skills/pinia-patterns/SKILL.md`    | Pinia state management best practices           |
-
+| Skill                 | Path                                        | Purpose                                         |
+| :-------------------- | :------------------------------------------ | :---------------------------------------------- |
+| **clean-code**        | `.agents/skills/clean-code/SKILL.md`        | Pragmatic coding standards, no over-engineering |
+| **typescript-expert** | `.agents/skills/typescript-expert/SKILL.md` | Type-level programming and strict type safety   |
+| **vue-patterns**      | `.agents/skills/vue-patterns/SKILL.md`      | Vue 3 Composition API patterns and reactivity   |
+| **pinia-patterns**    | `.agents/skills/pinia-patterns/SKILL.md`    | Pinia state management best practices           |
 
 ---
 
 ## Rule: commit-standards
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Commit Standards Protocol (Always On)
 
@@ -341,14 +344,13 @@ feat: local dev sandbox and unified bullet styling UI
 
 **Exception:** Truly trivial, single-file typo fixes may omit the list. However, if more than one file was modified, or the task involved logic changes, the **description list MUST be present**.
 
-
 ---
 
 ## Rule: continuous-improvement
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Continuous Improvement Protocol
 
@@ -366,8 +368,8 @@ trigger: always_on
    - Multi-step process → create a workflow
 
 3. **Centralize & Modularize**
-   - Scripts → `$env:USERPROFILE\.gemini\.agent-templates\scripts\`
-   - Rules → `$env:USERPROFILE\.gemini\.agent-templates\workspace\rules\`
+   - Scripts → `$env:USERPROFILE\.gemini\.agents-templates\scripts\`
+   - Rules → `$env:USERPROFILE\.gemini\.agents-templates\workspace\rules\`
    - Workflows → `$env:USERPROFILE\.gemini\global_workflows\`
 
 4. **Improve As You Go**
@@ -438,9 +440,9 @@ trigger: always_on
 
 When this rule triggers, auto-load these skills:
 
-| Skill          | Path                                | Purpose       |
-| :------------- | :---------------------------------- | :------------ |
-| **skill-name** | `.agent/skills/skill-name/SKILL.md` | Brief purpose |
+| Skill          | Path                                 | Purpose       |
+| :------------- | :----------------------------------- | :------------ |
+| **skill-name** | `.agents/skills/skill-name/SKILL.md` | Brief purpose |
 ```
 
 ### Exceptions (No Table Needed):
@@ -460,7 +462,7 @@ When this rule triggers, auto-load these skills:
 
 ### Action:
 
-1. **Scan**: `list_dir .agent/skills` and `list_dir .agent/rules`
+1. **Scan**: `list_dir .agents/skills` and `list_dir .agents/rules`
 2. **Map**: Check if relevant skills are mentioned in the `Skill Activation` tables of rules.
 3. **Rewire**: If a connection is missing, PROPOSE the update to the user.
 4. **Refine**: If a rule text is redundant with a skill, replace it with a direct link to the skill.
@@ -472,22 +474,21 @@ When this rule triggers, auto-load these skills for detailed protocols:
 
 | Skill                         | Path                                                               | Purpose                                       |
 | :---------------------------- | :----------------------------------------------------------------- | :-------------------------------------------- |
-| **template-management**       | `.agent/skills/template-management/SKILL.md`                       | Template sync, documentation, deduplication   |
-| **workflow-verification**     | `.agent/skills/workflow-verification/SKILL.md`                     | Verify workflows after architecture changes   |
-| **failure-postmortem**        | `.agent/skills/failure-postmortem/SKILL.md`                        | Bug & error documentation protocol            |
-| **update-breadcrumbs**        | `.agent/skills/update-breadcrumbs/SKILL.md`                        | Documentation sync (ROADMAP, README, etc.)    |
+| **template-management**       | `.agents/skills/template-management/SKILL.md`                      | Template sync, documentation, deduplication   |
+| **workflow-verification**     | `.agents/skills/workflow-verification/SKILL.md`                    | Verify workflows after architecture changes   |
+| **failure-postmortem**        | `.agents/skills/failure-postmortem/SKILL.md`                       | Bug & error documentation protocol            |
+| **update-breadcrumbs**        | `.agents/skills/update-breadcrumbs/SKILL.md`                       | Documentation sync (ROADMAP, README, etc.)    |
 | **code-redundancy-detection** | See [code-redundancy-detection.md](./code-redundancy-detection.md) | Proactive duplicate code detection            |
-| **detect-duplicates**         | `.agent/skills/detect-duplicates/SKILL.md`                         | SHA256 file-level duplicate finder            |
-| **knowledge-radar**           | `.agent/rules/knowledge-radar.md`                                  | Detect & persist KI candidates via `/save-ki` |
-
+| **detect-duplicates**         | `.agents/skills/detect-duplicates/SKILL.md`                        | SHA256 file-level duplicate finder            |
+| **knowledge-radar**           | `.agents/rules/knowledge-radar.md`                                 | Detect & persist KI candidates via `/save-ki` |
 
 ---
 
 ## Rule: deployment
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Deployment Standards
 
@@ -530,14 +531,13 @@ trigger: always_on
 
 **For step-by-step deployment, see `/deploy` workflow.**
 
-
 ---
 
 ## Rule: dev-server-preferences
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Development Server Preferences
 
@@ -551,14 +551,13 @@ trigger: always_on
 
 - Vite (Vue): `npm run dev` → runs on port 3000
 
-
 ---
 
 ## Rule: editor-setup
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Editor Setup
 
@@ -572,11 +571,11 @@ Add these to `.vscode/settings.json`:
 {
   // Suppress CSS warnings for Tailwind v4's @theme directive
   "css.lint.unknownAtRules": "ignore",
-  
+
   // Format on save
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "prettier.prettier-vscode",
-  
+
   // Auto-fix on save
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
@@ -600,25 +599,27 @@ Add these to `.vscode/settings.json`:
 ## Why These Settings?
 
 **`css.lint.unknownAtRules: ignore`**
+
 - Tailwind v4's `@theme` directive is new and not recognized by CSS linters yet
 - Suppresses "Unknown at rule @theme" warnings without affecting other CSS linting
 
 **`editor.formatOnSave`**
+
 - Automatically formats code with Prettier on save
 - Keeps code style consistent across the team
 
 **`source.fixAll`**
+
 - Auto-fixes ESLint issues on save
 - Catches common errors before commit
-
 
 ---
 
 ## Rule: general-advisor
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # General Advisor
 
@@ -681,14 +682,13 @@ Your role is strategic oversight, NOT direct implementation.
 
 When this rule triggers, auto-load these skills:
 
-| Skill                     | Path                                           | Purpose                                  |
-| :------------------------ | :--------------------------------------------- | :--------------------------------------- |
-| **architecture**          | `.agent/skills/architecture/SKILL.md`          | System design principles and trade-offs  |
-| **database-design**       | `.agent/skills/database-design/SKILL.md`       | Schema design and data modeling strategy |
-| **deployment-procedures** | `.agent/skills/deployment-procedures/SKILL.md` | Safe deployment workflows and rollback   |
-| **deployment-engineer**   | `.agent/skills/deployment-engineer/SKILL.md`   | CI/CD pipelines, GitOps, production ops  |
-| **plan-writing**          | `.agent/skills/plan-writing/SKILL.md`          | Structured task planning and breakdowns  |
-
+| Skill                     | Path                                            | Purpose                                  |
+| :------------------------ | :---------------------------------------------- | :--------------------------------------- |
+| **architecture**          | `.agents/skills/architecture/SKILL.md`          | System design principles and trade-offs  |
+| **database-design**       | `.agents/skills/database-design/SKILL.md`       | Schema design and data modeling strategy |
+| **deployment-procedures** | `.agents/skills/deployment-procedures/SKILL.md` | Safe deployment workflows and rollback   |
+| **deployment-engineer**   | `.agents/skills/deployment-engineer/SKILL.md`   | CI/CD pipelines, GitOps, production ops  |
+| **plan-writing**          | `.agents/skills/plan-writing/SKILL.md`          | Structured task planning and breakdowns  |
 
 ---
 
@@ -770,7 +770,6 @@ Before marking any task as complete:
 - **Safety is not a License**: "Safety measures" (like creating .bak folders) must be proposed and approved, not assumed.
 - **Plan Fidelity**: Execute the plan exactly as written. If a new step is needed, stop and ask.
 
-
 ---
 
 ## Rule: knowledge-radar
@@ -831,14 +830,13 @@ knowledge/
 - Works alongside `continuous-improvement.md` — if a manual task is repeated 3+ times, that's also a KI candidate.
 - Complements `session-summary-protocol.md` — at session end, do a final sweep for any unflagged KI candidates.
 
-
 ---
 
 ## Rule: manual-browser-testing
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Manual Browser Testing Preference
 
@@ -884,15 +882,14 @@ When you complete a UI fix or feature implementation:
 
 ```javascript
 // ✅ GOOD: Reuse active tab
-const pages = await list_browser_pages()
-const activePage = pages.find((p) => p.url.includes('localhost:3000'))
+const pages = await list_browser_pages();
+const activePage = pages.find(p => p.url.includes('localhost:3000'));
 if (activePage) {
   // Use activePage.id for testing
 }
 
 // ❌ AVOID: Always opening new tabs unnecessarily
 ```
-
 
 ---
 
@@ -1043,20 +1040,19 @@ Always include a **"Reset to Real User"** button.
 
 When this rule triggers, auto-load these skills:
 
-| Skill                    | Path                                          | Purpose                                 |
-| :----------------------- | :-------------------------------------------- | :-------------------------------------- |
-| **webapp-testing**       | `.agent/skills/webapp-testing/SKILL.md`       | E2E and automated testing strategies    |
-| **systematic-debugging** | `.agent/skills/systematic-debugging/SKILL.md` | Root cause analysis for permission bugs |
-| **vue-patterns**         | `.agent/skills/vue-patterns/SKILL.md`         | Composable patterns and reactivity      |
-
+| Skill                    | Path                                           | Purpose                                 |
+| :----------------------- | :--------------------------------------------- | :-------------------------------------- |
+| **webapp-testing**       | `.agents/skills/webapp-testing/SKILL.md`       | E2E and automated testing strategies    |
+| **systematic-debugging** | `.agents/skills/systematic-debugging/SKILL.md` | Root cause analysis for permission bugs |
+| **vue-patterns**         | `.agents/skills/vue-patterns/SKILL.md`         | Composable patterns and reactivity      |
 
 ---
 
 ## Rule: qa-tester
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # QA Tester
 
@@ -1095,30 +1091,29 @@ Your role is finding bugs and ensuring code quality.
 
 ## 🚀 Skill Activation (Auto-Load)
 
-You have access to specialized expert knowledge in `.agent/skills/`.
+You have access to specialized expert knowledge in `.agents/skills/`.
 **ALWAYS** consult these specific skills when performing your duties:
 
-| Skill                      | Path (Relative to Project)                       | Purpose                                                |
-| :------------------------- | :----------------------------------------------- | :----------------------------------------------------- |
-| **Web App Testing**        | `.agent/skills/webapp-testing/SKILL.md`          | **PRIMARY SOURCE** for E2E & automated testing         |
-| **Systematic Debug**       | `.agent/skills/systematic-debugging/SKILL.md`    | Root cause analysis (Four Phases)                      |
-| **TDD**                    | `.agent/skills/test-driven-development/SKILL.md` | Regression test creation & red-green-refactor          |
-| **Testing Patterns**       | `.agent/skills/testing-patterns/SKILL.md`        | Unit/Integration strategies & mocking                  |
-| **Mobile Layout**          | `.agent/skills/mobile-layout-debugging/SKILL.md` | Mobile UI jitter/shift debugging (check App.vue first) |
-| **Role-Based UI**          | `.agent/skills/role-based-ui-patterns/SKILL.md`  | Modular permission logic for role-based UI rendering   |
-| **Production Code Audit**  | `.agent/skills/production-code-audit/SKILL.md`   | Pre-deploy hardening — line-by-line quality gate       |
-| **Observability Engineer** | `.agent/skills/observability-engineer/SKILL.md`  | Verify monitoring, logging, and alerting are in place  |
+| Skill                      | Path (Relative to Project)                        | Purpose                                                |
+| :------------------------- | :------------------------------------------------ | :----------------------------------------------------- |
+| **Web App Testing**        | `.agents/skills/webapp-testing/SKILL.md`          | **PRIMARY SOURCE** for E2E & automated testing         |
+| **Systematic Debug**       | `.agents/skills/systematic-debugging/SKILL.md`    | Root cause analysis (Four Phases)                      |
+| **TDD**                    | `.agents/skills/test-driven-development/SKILL.md` | Regression test creation & red-green-refactor          |
+| **Testing Patterns**       | `.agents/skills/testing-patterns/SKILL.md`        | Unit/Integration strategies & mocking                  |
+| **Mobile Layout**          | `.agents/skills/mobile-layout-debugging/SKILL.md` | Mobile UI jitter/shift debugging (check App.vue first) |
+| **Role-Based UI**          | `.agents/skills/role-based-ui-patterns/SKILL.md`  | Modular permission logic for role-based UI rendering   |
+| **Production Code Audit**  | `.agents/skills/production-code-audit/SKILL.md`   | Pre-deploy hardening — line-by-line quality gate       |
+| **Observability Engineer** | `.agents/skills/observability-engineer/SKILL.md`  | Verify monitoring, logging, and alerting are in place  |
 
 > **Strategy:** When diagnosing bugs, always start with the **Systematic Debugging** protocol. When validating features, refer to **Web App Testing** for coverage strategies. Before any production deploy, run **Production Code Audit** as the final quality gate. For mobile layout shifts, use **Mobile Layout Debugging**. For scattered role-based permission logic, apply **Role-Based UI Patterns** to centralize into single-source-of-truth composables.
-
 
 ---
 
 ## Rule: self-improvement-loop
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Self-Improvement Loop
 
@@ -1133,7 +1128,7 @@ After ANY correction from the user, update the global lessons file to prevent th
 **Location (Global):**
 
 ```
-$env:USERPROFILE\.gemini\.agent-templates\tasks\lessons.md
+$env:USERPROFILE\.gemini\.agents-templates\tasks\lessons.md
 ```
 
 This file is **global** — lessons learned in one project automatically apply to ALL future projects. It compounds over time.
@@ -1226,19 +1221,18 @@ Session Start Protocol (Order):
 
 When writing a lesson, also trigger:
 
-| Skill                  | Trigger                                     | Purpose                       |
-| :--------------------- | :------------------------------------------ | :---------------------------- |
-| **failure-postmortem** | `.agent/skills/failure-postmortem/SKILL.md` | Structured root cause logging |
-| **update-breadcrumbs** | `.agent/skills/update-breadcrumbs/SKILL.md` | Persist lessons to STATE.json |
-
+| Skill                  | Trigger                                      | Purpose                       |
+| :--------------------- | :------------------------------------------- | :---------------------------- |
+| **failure-postmortem** | `.agents/skills/failure-postmortem/SKILL.md` | Structured root cause logging |
+| **update-breadcrumbs** | `.agents/skills/update-breadcrumbs/SKILL.md` | Persist lessons to STATE.json |
 
 ---
 
 ## Rule: session-summary-protocol
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Session Summary Protocol
 
@@ -1410,7 +1404,7 @@ session-summary-YYYY-MM-DD-HHMM.md
 
 ### When to Create Achievement Archive:
 
-Create an achievement document in `$env:USERPROFILE\.gemini\.agent-templates\AI_Achievements\` when:
+Create an achievement document in `$env:USERPROFILE\.gemini\.agents-templates\AI_Achievements\` when:
 
 1. **Major Project Milestones**
    - ✅ Full system integration complete (like Skills Library)
@@ -1470,7 +1464,7 @@ Use the **motivating style** with:
 ### Naming Convention:
 
 ```
-$env:USERPROFILE\.gemini\.agent-templates\AI_Achievements\
+$env:USERPROFILE\.gemini\.agents-templates\AI_Achievements\
     [Project_Name]_[Milestone]_Complete.md
 ```
 
@@ -1584,11 +1578,11 @@ Include:
 
 When this rule triggers, auto-load these skills:
 
-| Skill                      | Path                                            | Purpose                                         |
-| :------------------------- | :---------------------------------------------- | :---------------------------------------------- |
-| **rich-achievement-style** | `.agent/skills/rich-achievement-style/SKILL.md` | Milestone celebration templates                 |
-| **update-breadcrumbs**     | `.agent/skills/update-breadcrumbs/SKILL.md`     | Session state persistence (NEXT.md, STATE.json) |
-| **knowledge-radar**        | `.agent/rules/knowledge-radar.md`               | End-of-session KI sweep, suggest `/save-ki`     |
+| Skill                      | Path                                             | Purpose                                         |
+| :------------------------- | :----------------------------------------------- | :---------------------------------------------- |
+| **rich-achievement-style** | `.agents/skills/rich-achievement-style/SKILL.md` | Milestone celebration templates                 |
+| **update-breadcrumbs**     | `.agents/skills/update-breadcrumbs/SKILL.md`     | Session state persistence (NEXT.md, STATE.json) |
+| **knowledge-radar**        | `.agents/rules/knowledge-radar.md`               | End-of-session KI sweep, suggest `/save-ki`     |
 
 ---
 
@@ -1598,14 +1592,13 @@ When this rule triggers, auto-load these skills:
 
 **Action:** Always deliver this level of detail and visual richness in session summaries.
 
-
 ---
 
 ## Rule: system-architect
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # System Architect
 
@@ -1652,34 +1645,35 @@ Your role is making high-level technical decisions and ensuring code quality.
 
 ## 🚀 Skill Activation (Auto-Load)
 
-You have access to specialized expert knowledge in `.agent/skills/`.
+You have access to specialized expert knowledge in `.agents/skills/`.
 **ALWAYS** consult these specific skills when performing your duties:
 
-| Skill                      | Path (Relative to Project)                      | Purpose                                           |
-| :------------------------- | :---------------------------------------------- | :------------------------------------------------ |
-| **Architecture**           | `.agent/skills/architecture/SKILL.md`           | **PRIMARY SOURCE** for system design principles   |
-| **Database Design**        | `.agent/skills/database-design/SKILL.md`        | Schema design & data modeling                     |
-| **API Patterns**           | `.agent/skills/api-patterns/SKILL.md`           | REST/GraphQL & integration standards              |
-| **TypeScript**             | `.agent/skills/typescript-expert/SKILL.md`      | Strict type safety guidelines                     |
-| **Firebase**               | `.agent/skills/firebase-patterns/SKILL.md`      | Cloud functions & Firestore rules (if applicable) |
-| **Deployment Engineer**    | `.agent/skills/deployment-engineer/SKILL.md`    | CI/CD pipelines, GitOps, zero-downtime deploys    |
-| **Observability Engineer** | `.agent/skills/observability-engineer/SKILL.md` | Design monitoring, logging & alerting topology    |
+| Skill                      | Path (Relative to Project)                       | Purpose                                           |
+| :------------------------- | :----------------------------------------------- | :------------------------------------------------ |
+| **Architecture**           | `.agents/skills/architecture/SKILL.md`           | **PRIMARY SOURCE** for system design principles   |
+| **Database Design**        | `.agents/skills/database-design/SKILL.md`        | Schema design & data modeling                     |
+| **API Patterns**           | `.agents/skills/api-patterns/SKILL.md`           | REST/GraphQL & integration standards              |
+| **TypeScript**             | `.agents/skills/typescript-expert/SKILL.md`      | Strict type safety guidelines                     |
+| **Firebase**               | `.agents/skills/firebase-patterns/SKILL.md`      | Cloud functions & Firestore rules (if applicable) |
+| **Deployment Engineer**    | `.agents/skills/deployment-engineer/SKILL.md`    | CI/CD pipelines, GitOps, zero-downtime deploys    |
+| **Observability Engineer** | `.agents/skills/observability-engineer/SKILL.md` | Design monitoring, logging & alerting topology    |
 
 > **Strategy:** Before proposing architectural changes, check if a relevant SKILL.md exists and READ IT to verify alignment with established patterns.
-
 
 ---
 
 ## Rule: ui-consistency
 
 ---
+
 description: Enforce consistent UI/UX patterns across the application, particularly for modals and dialogs.
-globs: '**/*.vue'
+globs: '\*_/_.vue'
+
 ---
 
 # UI/UX Consistency Standards
 
-> **Related Role Rule**: See also `.agent/rules/ui-ux-specialist.md` for the UI/UX Specialist role and core responsibilities.
+> **Related Role Rule**: See also `.agents/rules/ui-ux-specialist.md` for the UI/UX Specialist role and core responsibilities.
 
 ## 1. Modals & Dialogs
 
@@ -1734,23 +1728,22 @@ globs: '**/*.vue'
 
 When this rule triggers, auto-load these skills:
 
-| Skill                 | Path                                          | Purpose                                                     |
-| :-------------------- | :-------------------------------------------- | :---------------------------------------------------------- |
-| **ui-ux-pro-max**     | `.agent/skills/ui-ux-pro-max/SKILL.md`     | Complex UI/UX patterns, color palettes, advanced components |
-| **frontend-design**   | `.agent/skills/frontend-design/SKILL.md`   | General design principles and decision making               |
-| **ui-patterns**       | `.agent/skills/ui-patterns/SKILL.md`       | Reusable animation patterns (accordion, collapse, easing)   |
-| **primevue-patterns** | `.agent/skills/primevue-patterns/SKILL.md` | PrimeVue component library, theming, best practices         |
-| **tailwind-patterns** | `.agent/skills/tailwind-patterns/SKILL.md` | Tailwind CSS v4, CSS-first config, container queries        |
-| **mobile-design**     | `.agent/skills/mobile-design/SKILL.md`     | Mobile-first design, touch interaction, responsive patterns |
-
+| Skill                 | Path                                        | Purpose                                                     |
+| :-------------------- | :------------------------------------------ | :---------------------------------------------------------- |
+| **ui-ux-pro-max**     | `.agents/skills/ui-ux-pro-max/SKILL.md`     | Complex UI/UX patterns, color palettes, advanced components |
+| **frontend-design**   | `.agents/skills/frontend-design/SKILL.md`   | General design principles and decision making               |
+| **ui-patterns**       | `.agents/skills/ui-patterns/SKILL.md`       | Reusable animation patterns (accordion, collapse, easing)   |
+| **primevue-patterns** | `.agents/skills/primevue-patterns/SKILL.md` | PrimeVue component library, theming, best practices         |
+| **tailwind-patterns** | `.agents/skills/tailwind-patterns/SKILL.md` | Tailwind CSS v4, CSS-first config, container queries        |
+| **mobile-design**     | `.agents/skills/mobile-design/SKILL.md`     | Mobile-first design, touch interaction, responsive patterns |
 
 ---
 
 ## Rule: ui-ux-specialist
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # UI/UX Specialist
 
@@ -1767,7 +1760,7 @@ Your role is ensuring excellent user experience and visual design.
 
 **User Preferences & Aesthetics (CRITICAL):**
 
-- **PRIMARY STYLE:** Always refer to `$env:USERPROFILE\.gemini\.agent-templates\references\DESIGN_FAVORITES.md` for the user's preferred visual styles (e.g., "Premium Shimmer & Bloom").
+- **PRIMARY STYLE:** Always refer to `$env:USERPROFILE\.gemini\.agents-templates\references\DESIGN_FAVORITES.md` for the user's preferred visual styles (e.g., "Premium Shimmer & Bloom").
 - **Design Philosophy:** Prioritize high-end, futuristic, and glossy aesthetics over standard, flat UI unless specifically requested.
 
 **Design Principles:**
@@ -1788,30 +1781,29 @@ Your role is ensuring excellent user experience and visual design.
 
 ## 🚀 Skill Activation (Auto-Load)
 
-You have access to specialized expert knowledge in `.agent/skills/`.
+You have access to specialized expert knowledge in `.agents/skills/`.
 **ALWAYS** consult these specific skills when performing your duties:
 
-| Skill               | Path (Relative to Project)                    | Purpose                                           |
-| :------------------ | :-------------------------------------------- | :------------------------------------------------ |
-| **UI/UX Pro Max**   | `.agent/skills/ui-ux-pro-max/SKILL.md`     | **PRIMARY SOURCE** for high-end design principles |
-| **Frontend Design** | `.agent/skills/frontend-design/SKILL.md`   | Component structure & layout patterns             |
-| **Vue Pattern**     | `.agent/skills/vue-patterns/SKILL.md`      | Proper Vue 3 Composition API usage                |
-| **Tailwind**        | `.agent/skills/tailwind-patterns/SKILL.md` | Styling utility class standards                   |
-| **PrimeVue**        | `.agent/skills/primevue-patterns/SKILL.md` | Component library usage (if applicable)           |
-| **UI Patterns**     | `.agent/skills/ui-patterns/SKILL.md`       | Reusable animation patterns (accordion, collapse) |
-| **Design Doc**      | `.agent/skills/design-md/SKILL.md`         | **SCRIBE** for documenting design decisions       |
-| **Mobile Design**   | `.agent/skills/mobile-design/SKILL.md`     | Mobile-first principles & touch targets           |
+| Skill               | Path (Relative to Project)                  | Purpose                                           |
+| :------------------ | :------------------------------------------ | :------------------------------------------------ |
+| **UI/UX Pro Max**   | `.agents/skills/ui-ux-pro-max/SKILL.md`     | **PRIMARY SOURCE** for high-end design principles |
+| **Frontend Design** | `.agents/skills/frontend-design/SKILL.md`   | Component structure & layout patterns             |
+| **Vue Pattern**     | `.agents/skills/vue-patterns/SKILL.md`      | Proper Vue 3 Composition API usage                |
+| **Tailwind**        | `.agents/skills/tailwind-patterns/SKILL.md` | Styling utility class standards                   |
+| **PrimeVue**        | `.agents/skills/primevue-patterns/SKILL.md` | Component library usage (if applicable)           |
+| **UI Patterns**     | `.agents/skills/ui-patterns/SKILL.md`       | Reusable animation patterns (accordion, collapse) |
+| **Design Doc**      | `.agents/skills/design-md/SKILL.md`         | **SCRIBE** for documenting design decisions       |
+| **Mobile Design**   | `.agents/skills/mobile-design/SKILL.md`     | Mobile-first principles & touch targets           |
 
 > **Strategy:** Before answering complex UI questions, check if a relevant SKILL.md exists and READ IT to align with project standards.
-
 
 ---
 
 ## Rule: ux-excellence
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # UX Excellence Monitor
 
@@ -1833,7 +1825,7 @@ Monitor these areas whenever code changes:
 
 ### Visual Consistency
 
-- Does the UI align with the user's preferred styles in `$env:USERPROFILE\.gemini\.agent-templates\references\DESIGN_FAVORITES.md`?
+- Does the UI align with the user's preferred styles in `$env:USERPROFILE\.gemini\.agents-templates\references\DESIGN_FAVORITES.md`?
 - Do new components match the design system?
 - Are colors from the theme palette?
 - Is spacing consistent with Tailwind scale?
@@ -1885,24 +1877,23 @@ Before marking any UI feature complete:
 
 When this rule triggers, auto-load these skills:
 
-| Skill                     | Path                                           | Purpose                                       |
-| :------------------------ | :--------------------------------------------- | :-------------------------------------------- |
-| **ui-ux-pro-max**         | `.agent/skills/ui-ux-pro-max/SKILL.md`         | High-end design principles and patterns       |
-| **frontend-design**       | `.agent/skills/frontend-design/SKILL.md`       | Component structure and layout patterns       |
-| **tailwind-patterns**     | `.agent/skills/tailwind-patterns/SKILL.md`     | Styling utility class standards               |
-| **mobile-design**         | `.agent/skills/mobile-design/SKILL.md`         | Mobile-first principles and touch targets     |
-| **ui-patterns**           | `.agent/skills/ui-patterns/SKILL.md`           | Reusable animation patterns (accordion, etc.) |
-| **performance-profiling** | `.agent/skills/performance-profiling/SKILL.md` | Measurement and optimization techniques       |
-| **wcag-audit-patterns**   | `.agent/skills/wcag-audit-patterns/SKILL.md`   | WCAG 2.2 accessibility auditing & remediation |
-
+| Skill                     | Path                                            | Purpose                                       |
+| :------------------------ | :---------------------------------------------- | :-------------------------------------------- |
+| **ui-ux-pro-max**         | `.agents/skills/ui-ux-pro-max/SKILL.md`         | High-end design principles and patterns       |
+| **frontend-design**       | `.agents/skills/frontend-design/SKILL.md`       | Component structure and layout patterns       |
+| **tailwind-patterns**     | `.agents/skills/tailwind-patterns/SKILL.md`     | Styling utility class standards               |
+| **mobile-design**         | `.agents/skills/mobile-design/SKILL.md`         | Mobile-first principles and touch targets     |
+| **ui-patterns**           | `.agents/skills/ui-patterns/SKILL.md`           | Reusable animation patterns (accordion, etc.) |
+| **performance-profiling** | `.agents/skills/performance-profiling/SKILL.md` | Measurement and optimization techniques       |
+| **wcag-audit-patterns**   | `.agents/skills/wcag-audit-patterns/SKILL.md`   | WCAG 2.2 accessibility auditing & remediation |
 
 ---
 
 ## Rule: verification-protocol
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Verification Protocol
 
@@ -2063,12 +2054,12 @@ From 24 failure memories:
 
 When this rule triggers, auto-load these skills:
 
-| Skill                         | Path                                               | Purpose                                       |
-| :---------------------------- | :------------------------------------------------- | :-------------------------------------------- |
-| **systematic-debugging**      | `.agent/skills/systematic-debugging/SKILL.md`      | Four Phases root cause analysis               |
-| **state-overlay-consistency** | `.agent/skills/state-overlay-consistency/SKILL.md` | Validate mental model vs actual filesystem    |
-| **lint-and-validate**         | `.agent/skills/lint-and-validate/SKILL.md`         | Automatic quality control and static analysis |
-| **test-driven-development**   | `.agent/skills/test-driven-development/SKILL.md`   | Red-green-refactor cycle verification         |
+| Skill                         | Path                                                | Purpose                                       |
+| :---------------------------- | :-------------------------------------------------- | :-------------------------------------------- |
+| **systematic-debugging**      | `.agents/skills/systematic-debugging/SKILL.md`      | Four Phases root cause analysis               |
+| **state-overlay-consistency** | `.agents/skills/state-overlay-consistency/SKILL.md` | Validate mental model vs actual filesystem    |
+| **lint-and-validate**         | `.agents/skills/lint-and-validate/SKILL.md`         | Automatic quality control and static analysis |
+| **test-driven-development**   | `.agents/skills/test-driven-development/SKILL.md`   | Red-green-refactor cycle verification         |
 
 ## The Bottom Line
 
@@ -2078,14 +2069,13 @@ Run the command. Read the output. THEN claim the result.
 
 This is non-negotiable.
 
-
 ---
 
 ## Rule: visual-communication
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Visual Communication Standards
 
@@ -2321,10 +2311,10 @@ For detailed milestone documentation templates, see the `rich-achievement-style`
 
 When this rule triggers, auto-load these skills:
 
-| Skill                       | Path                                                | Purpose                                   |
-| :-------------------------- | :-------------------------------------------------- | :---------------------------------------- |
-| **rich-achievement-style**  | `.agent/skills/rich-achievement-style/SKILL.md`  | Detailed milestone celebration templates  |
-| **documentation-templates** | `.agent/skills/documentation-templates/SKILL.md` | README, API docs, code comments structure |
+| Skill                       | Path                                              | Purpose                                   |
+| :-------------------------- | :------------------------------------------------ | :---------------------------------------- |
+| **rich-achievement-style**  | `.agents/skills/rich-achievement-style/SKILL.md`  | Detailed milestone celebration templates  |
+| **documentation-templates** | `.agents/skills/documentation-templates/SKILL.md` | README, API docs, code comments structure |
 
 ---
 
@@ -2341,14 +2331,13 @@ When this rule triggers, auto-load these skills:
 
 **Result:** Communication that captures the designer's eye and celebrates engineering excellence.
 
-
 ---
 
 ## Rule: wellness-monitor
 
 ---
-trigger: always_on
----
+
+## trigger: always_on
 
 # Wellness Monitor
 
@@ -2421,13 +2410,11 @@ When rapidly switching between unrelated tasks:
 - "Stop working immediately"
 - Interrupting mid-sentence
 
-
 ---
 
 # Agent Docs (Latest Brain Context)
 
-The following files in `.agent/docs/` contain the current reasoning and planning state for this project:
+The following files in `.agents/docs/` contain the current reasoning and planning state for this project:
 
-- [task.md](file:///.agent/docs/task.md)
-- [latest_changes.txt](file:///.agent/docs/latest_changes.txt)
-
+- [task.md](file:///.agents/docs/task.md)
+- [latest_changes.txt](file:///.agents/docs/latest_changes.txt)

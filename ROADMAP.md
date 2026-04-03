@@ -2,14 +2,14 @@
 
 > **Status:** 🏗️ Foundation/Setup
 > **Current Phase:** Phase 1 - Foundation & Scaffolding
-> **Last Updated:** 2026-03-30
+> **Last Updated:** 2026-04-01
 
 ---
 
 ## Progress Overview
 
 ```
-Phase 1: Foundation           ██░░░░░░░░ 20%
+Phase 1: Foundation           ███░░░░░░░ 30%
 Phase 2: Core Logic           ░░░░░░░░░░  0%
 Phase 3: Dashboard UI         ░░░░░░░░░░  0%
 Phase 4: Notifications        ░░░░░░░░░░  0%
@@ -23,6 +23,7 @@ Phase 4: Notifications        ░░░░░░░░░░  0%
 
 - [x] Initial Project Setup
 - [x] Agent Symlinks & Bootstrap
+- [x] Pluralize Agent Directory (.agents)
 - [ ] Scaffold Vue 3 (Vite + TS)
 - [ ] Install Tailwind CSS v4
 - [ ] Install PrimeVue 4

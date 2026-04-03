@@ -30,7 +30,11 @@ Thumbs.db
 Desktop.ini
 
 # ── AI Agent / Antigravity ────────────────────────────────────
-# .agent is a symlink — tracked via .git/info/exclude, not here
+# .agents is a symlink — tracked via .git/info/exclude, not here
+# .claude contains local Claude skill symlinks and local settings
+# .tmp contains local smoke-test/bootstrap artifacts
+.claude/
+.tmp/
 # AGENTS.md is intentionally committed for Codex visibility
 STATE.json
 .forensics/

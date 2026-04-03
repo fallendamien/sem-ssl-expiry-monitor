@@ -3,6 +3,10 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "files.associations": {
+    "**/.claude/skills/**/*.md": "markdown",
+    "**/.agents/skills/**/*.md": "markdown"
+  },
   "css.lint.unknownAtRules": "ignore",
   "typescript.tsdk": "node_modules/typescript/lib"
 }
