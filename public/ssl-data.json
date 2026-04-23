@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-23T10:59:53.061Z",
-  "successCount": 5,
+  "generatedAt": "2026-04-23T11:53:28.946Z",
+  "successCount": 4,
   "failCount": 0,
   "domains": [
     {
@@ -14,40 +14,24 @@
       "status": "Active",
       "expiryDate": "2027-03-13T23:59:59.000Z",
       "daysLeft": 325,
-      "lastChecked": "2026-04-23T10:59:48.496Z",
+      "lastChecked": "2026-04-23T11:53:24.248Z",
       "checkHost": "ksp.mpkk.gov.my",
       "source": "live",
       "error": null
     },
     {
-      "id": "skp-mpkubangpasu-gov-my",
-      "name": "skp.mpkubangpasu.gov.my",
+      "id": "mpkubangpasu-gov-my-wildcard",
+      "name": "*.mpkubangpasu.gov.my",
       "productName": "SSL Certificates",
       "certificateType": "Essential SSL",
       "issuer": "Sectigo Limited",
-      "pricing": "RM159.00",
+      "pricing": "RM318.00",
       "billingCycle": "Annually",
       "status": "Warning",
       "expiryDate": "2026-07-16T23:59:59.000Z",
       "daysLeft": 85,
-      "lastChecked": "2026-04-23T10:59:48.674Z",
+      "lastChecked": "2026-04-23T11:53:24.536Z",
       "checkHost": "skp.mpkubangpasu.gov.my",
-      "source": "live",
-      "error": null
-    },
-    {
-      "id": "skpadmin-mpkubangpasu-gov-my",
-      "name": "skpadmin.mpkubangpasu.gov.my",
-      "productName": "SSL Certificates",
-      "certificateType": "Essential SSL",
-      "issuer": "Sectigo Limited",
-      "pricing": "RM159.00",
-      "billingCycle": "Annually",
-      "status": "Warning",
-      "expiryDate": "2026-07-16T23:59:59.000Z",
-      "daysLeft": 85,
-      "lastChecked": "2026-04-23T10:59:48.786Z",
-      "checkHost": "skpadmin.mpkubangpasu.gov.my",
       "source": "live",
       "error": null
     },
@@ -62,7 +46,7 @@
       "status": "Active",
       "expiryDate": "2026-08-11T23:59:59.000Z",
       "daysLeft": 111,
-      "lastChecked": "2026-04-23T10:59:48.876Z",
+      "lastChecked": "2026-04-23T11:53:24.795Z",
       "checkHost": "htpsmartsolution.com.my",
       "source": "fallback",
       "error": null
@@ -72,16 +56,16 @@
       "name": "*.penang.my",
       "productName": "SSL Certificates",
       "certificateType": "Essential Wildcard SSL",
-      "issuer": "Sectigo Limited",
+      "issuer": "Sectigo (formerly Comodo CA)",
       "pricing": "RM539.00",
       "billingCycle": "Annually",
       "status": "Active",
       "expiryDate": "2026-09-14T23:59:59.000Z",
       "daysLeft": 145,
-      "lastChecked": "2026-04-23T10:59:53.061Z",
+      "lastChecked": "2026-04-23T11:53:28.946Z",
       "checkHost": "psp.penang.my",
-      "source": "live",
-      "error": null
+      "source": "fallback",
+      "error": "getaddrinfo EAI_AGAIN psp.penang.my"
     }
   ]
 }

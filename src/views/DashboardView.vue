@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useDomainStore } from '../stores/domains'
 import CountdownHero from '../components/CountdownHero.vue'
@@ -6,6 +7,9 @@ import DomainCard from '../components/DomainCard.vue'
 
 const domainStore = useDomainStore()
 const { nextExpiringDomain, secondaryDomains, isLoading, loadError, domains, lastRefreshed } = storeToRefs(domainStore)
+
+type TimeFormat = 'days' | 'detailed'
+const timeFormat = ref<TimeFormat>('days')
 </script>
 
 <template>
@@ -48,14 +52,29 @@ const { nextExpiringDomain, secondaryDomains, isLoading, loadError, domains, las
             <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
               {{ domains.length }} Total
             </span>
+            <!-- Time format toggle -->
+            <div class="flex items-center gap-0.5 bg-zinc-100 dark:bg-zinc-800 p-0.5 rounded-lg">
+              <button
+                class="px-2.5 py-1 text-[10px] font-bold rounded-md transition-all cursor-pointer"
+                :class="timeFormat === 'days' ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 shadow-sm' : 'text-zinc-400 hover:text-zinc-600'"
+                @click="timeFormat = 'days'"
+              >Days</button>
+              <button
+                class="px-2.5 py-1 text-[10px] font-bold rounded-md transition-all cursor-pointer"
+                :class="timeFormat === 'detailed' ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 shadow-sm' : 'text-zinc-400 hover:text-zinc-600'"
+                @click="timeFormat = 'detailed'"
+              >m · d · h</button>
+            </div>
           </div>
         </div>
 
         <div class="grid gap-4">
           <DomainCard
-            v-for="domain in secondaryDomains"
+            v-for="(domain, index) in secondaryDomains"
             :key="domain.id"
             v-bind="domain"
+            :time-format="timeFormat"
+            :is-runner-up="index === 0"
           />
         </div>
       </section>

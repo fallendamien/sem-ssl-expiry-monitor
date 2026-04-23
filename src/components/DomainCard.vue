@@ -11,6 +11,8 @@ const props = defineProps<{
   status: 'Active' | 'Warning' | 'Critical' | 'Expired' | 'Unknown';
   expiryDate: string | null;
   daysLeft?: number | null;
+  timeFormat?: 'days' | 'detailed';
+  isRunnerUp?: boolean;
 }>();
 
 const daysRemaining = computed(() => {
@@ -40,21 +42,39 @@ const dueDateLabel = computed(() => {
     year: 'numeric',
   }).format(new Date(props.expiryDate));
 });
+// useRed: true for actual warning/critical domains AND the runner-up position
+const useRed = computed(() => isWarning.value || !!props.isRunnerUp);
+
 const statusLabel = computed(() => {
   if (isUnknown.value) return 'Unknown';
   if (isExpired.value) return 'Expired';
   if (isWarning.value) return props.status === 'Critical' ? 'Critical' : 'Expiring Soon';
+  if (props.isRunnerUp) return 'Up Next';
   return 'Active';
+});
+
+const detailedTime = computed(() => {
+  if (!props.expiryDate) return null;
+  const diff = new Date(props.expiryDate).getTime() - Date.now();
+  if (diff <= 0) return null;
+  return {
+    months: Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)),
+    days: Math.floor((diff / (1000 * 60 * 60 * 24)) % 30.44),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+  };
 });
 </script>
 
 <template>
-  <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm p-5 rounded-2xl border border-white/60 dark:border-zinc-800 shadow-[0_4px_20px_rgb(0,0,0,0.01)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.03)] dark:hover:bg-zinc-900/60 transition-all group">
+  <div class="backdrop-blur-sm p-5 rounded-2xl border shadow-[0_4px_20px_rgb(0,0,0,0.01)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.03)] transition-all group"
+       :class="useRed && !isWarning
+         ? 'bg-rose-50/60 dark:bg-rose-950/10 border-rose-200/60 dark:border-rose-900/40 hover:bg-rose-50/80'
+         : 'bg-white/40 dark:bg-zinc-900/40 border-white/60 dark:border-zinc-800 dark:hover:bg-zinc-900/60'">
     <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-6">
       <!-- Domain Info -->
       <div class="flex items-center gap-4 flex-1">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center transition-colors"
-             :class="isWarning ? 'bg-rose-50 dark:bg-rose-950/30 text-rose-500' : 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-500'">
+             :class="useRed ? 'bg-rose-50 dark:bg-rose-950/30 text-rose-500' : 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-500'">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
           </svg>
@@ -67,7 +87,7 @@ const statusLabel = computed(() => {
           </p>
           <div class="flex flex-wrap items-center gap-2 mt-2">
             <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded"
-                  :class="isWarning ? 'bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400' : 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400'">
+                  :class="useRed ? 'bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400' : 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400'">
               {{ statusLabel }}
             </span>
             <span class="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">
@@ -82,17 +102,32 @@ const statusLabel = computed(() => {
 
       <!-- Expiry Stat -->
       <div class="flex flex-col items-end gap-2 min-w-[140px]">
-        <div class="flex items-baseline gap-1">
-          <span class="text-lg font-bold tabular-nums transition-colors" :class="isWarning ? 'text-rose-500' : 'text-zinc-900 dark:text-zinc-100'">
+
+        <!-- Days format -->
+        <div v-if="timeFormat !== 'detailed' || isExpired || isUnknown || !detailedTime" class="flex items-baseline gap-1">
+          <span class="text-lg font-bold tabular-nums transition-colors" :class="useRed ? 'text-rose-500' : 'text-zinc-900 dark:text-zinc-100'">
             {{ dayCount }}
           </span>
           <span class="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest">{{ dayLabel }}</span>
         </div>
 
+        <!-- Detailed format: Xm Xd Xh -->
+        <div v-else class="flex items-baseline gap-2">
+          <span v-if="detailedTime.months > 0" class="tabular-nums font-bold transition-colors" :class="useRed ? 'text-rose-500' : 'text-zinc-900 dark:text-zinc-100'">
+            {{ detailedTime.months }}<span class="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 ml-0.5">m</span>
+          </span>
+          <span class="tabular-nums font-bold transition-colors" :class="useRed ? 'text-rose-500' : 'text-zinc-900 dark:text-zinc-100'">
+            {{ detailedTime.days }}<span class="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 ml-0.5">d</span>
+          </span>
+          <span class="tabular-nums font-bold transition-colors" :class="useRed ? 'text-rose-500' : 'text-zinc-900 dark:text-zinc-100'">
+            {{ detailedTime.hours }}<span class="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 ml-0.5">h</span>
+          </span>
+        </div>
+
         <!-- Progress Bar -->
         <div class="w-full h-1.5 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
           <div class="h-full transition-all duration-1000 ease-out"
-               :class="isWarning ? 'bg-rose-400' : 'bg-emerald-400'"
+               :class="useRed ? 'bg-rose-400' : 'bg-emerald-400'"
                :style="{ width: `${percentage}%` }">
           </div>
         </div>

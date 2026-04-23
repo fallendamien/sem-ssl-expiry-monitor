@@ -11,21 +11,12 @@
     "fallbackIssuer": "Sectigo (formerly Comodo CA)"
   },
   {
-    "id": "skp-mpkubangpasu-gov-my",
-    "name": "skp.mpkubangpasu.gov.my",
+    "id": "mpkubangpasu-gov-my-wildcard",
+    "name": "*.mpkubangpasu.gov.my",
     "checkHost": "skp.mpkubangpasu.gov.my",
     "productName": "SSL Certificates",
     "certificateType": "Essential SSL",
-    "pricing": "RM159.00",
-    "billingCycle": "Annually"
-  },
-  {
-    "id": "skpadmin-mpkubangpasu-gov-my",
-    "name": "skpadmin.mpkubangpasu.gov.my",
-    "checkHost": "skpadmin.mpkubangpasu.gov.my",
-    "productName": "SSL Certificates",
-    "certificateType": "Essential SSL",
-    "pricing": "RM159.00",
+    "pricing": "RM318.00",
     "billingCycle": "Annually"
   },
   {

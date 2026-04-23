@@ -63,10 +63,10 @@ const timerBlocks = computed(() => ({
 
     <!-- Action Buttons -->
     <div class="flex flex-wrap items-center justify-center gap-4">
-      <button class="px-8 py-3.5 bg-teal-500 hover:bg-teal-600 text-white rounded-xl shadow-xl shadow-teal-500/20 transition-all font-bold text-sm">
+      <button class="px-8 py-3.5 bg-teal-500 hover:bg-teal-600 text-white rounded-xl shadow-xl shadow-teal-500/20 transition-all font-bold text-sm cursor-pointer">
         Renew Certificate
       </button>
-      <button class="px-8 py-3.5 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 rounded-xl transition-all font-bold text-sm">
+      <button class="px-8 py-3.5 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 rounded-xl transition-all font-bold text-sm cursor-pointer">
         {{ pricing }} / {{ billingCycle }}
       </button>
     </div>
