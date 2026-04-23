@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+:root {
+  --background: #fdfdfd;
+  --foreground: #1a1c1c;
+  --teal-500: #14b8a6;
+  --coral-500: #fb7185;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-space-grotesk);
+}
+
+/* Custom Scrollbar for the airy feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e2e2;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d1d1;
+}
+
+/* Selection color */
+::selection {
+  background-color: #f0fdfa;
+  color: #0f766e;
+}

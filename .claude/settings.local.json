@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe -Command \"Test-Path 'd:\\\\Coding Zone\\\\Vue\\\\sem-ssl-expiry-monitor\\\\.agents'; Get-Item 'd:\\\\Coding Zone\\\\Vue\\\\sem-ssl-expiry-monitor\\\\.agents' -ErrorAction SilentlyContinue | Select-Object FullName, LinkType, Target\")",
+      "Bash(powershell.exe -Command ':*)",
+      "Read(//c/Users/Zamri/.gemini/.agent-templates/scripts/**)",
+      "Read(//e/My Drive/antigravity/.agent-templates/scripts/**)",
+      "Bash(powershell.exe -Command '& \"$env:USERPROFILE\\\\.gemini\\\\.agent-templates\\\\scripts\\\\check-sync.ps1\"')",
+      "Bash(chcp 65001)",
+      "Bash(powershell.exe -Command 'chcp 65001 | Out-Null; & \"$env:USERPROFILE\\\\.gemini\\\\.agent-templates\\\\scripts\\\\check-sync.ps1\"')",
+      "Bash(powershell.exe -Command '& \"$env:USERPROFILE\\\\.gemini\\\\.agent-templates\\\\scripts\\\\check-sync.ps1\" | Out-File -FilePath \"$env:TEMP\\\\check-sync-out.txt\" -Encoding utf8')",
+      "Bash(python3 -c ':*)",
+      "Read(//e/My Drive/antigravity/.agent-templates/workspace/skills/**)",
+      "Read(//e/My Drive/antigravity/.agent-templates/workspace/rules/**)",
+      "Read(//c/Users/Zamri/.gemini/.agent-templates/workspace/skills/frontend-design/**)",
+      "Read(//e/My Drive/antigravity/.agent-templates/workspace/skills/frontend-design/**)",
+      "PowerShell(python \"$env:USERPROFILE\\\\.gemini\\\\.agent-templates\\\\scripts\\\\compile-agents-md.py\" 2>&1)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Zamri\\.gemini\\.agent-templates\\scripts",
+      "E:\\My Drive\\antigravity\\.agent-templates\\scripts"
+    ]
+  }
+}
