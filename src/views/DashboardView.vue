@@ -1,82 +1,88 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import { useDomainStore } from '../stores/domains'
 import CountdownHero from '../components/CountdownHero.vue'
 import DomainCard from '../components/DomainCard.vue'
 
 const domainStore = useDomainStore()
+const { nextExpiringDomain, secondaryDomains, isLoading, loadError, domains, lastRefreshed } = storeToRefs(domainStore)
 </script>
 
 <template>
-  <div class="dashboard-container min-h-screen bg-[#fdfdfd] selection:bg-teal-100">
-    <div class="max-w-5xl mx-auto px-6">
-      <!-- Hero Section for the Most Urgent Domain -->
-      <transition name="fade-slide" appear>
-        <CountdownHero 
-          v-if="domainStore.mostUrgentDomain"
-          :name="domainStore.mostUrgentDomain.name"
-          :expiry-date="domainStore.mostUrgentDomain.expiryDate"
+  <div class="p-8 space-y-12 transition-colors duration-300">
+    <!-- Loading State -->
+    <div v-if="isLoading" class="flex flex-col items-center justify-center py-24 gap-4 text-zinc-400">
+      <div class="w-8 h-8 border-2 border-zinc-200 dark:border-zinc-800 border-t-teal-500 rounded-full animate-spin"></div>
+      <p class="text-sm font-medium">Loading certificates…</p>
+    </div>
+
+    <!-- Error State -->
+    <div v-else-if="loadError" class="max-w-2xl mx-auto bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/50 rounded-2xl p-6 text-sm text-red-600 dark:text-red-400">
+      <strong class="font-semibold">Could not load ssl-data.json.</strong>
+      <span class="ml-1 text-red-400">{{ loadError }}</span>
+      <p class="text-xs text-red-400 mt-1">Run <code class="font-mono bg-red-100 dark:bg-red-900/40 px-1 rounded">npm run check-ssl</code> to regenerate it.</p>
+    </div>
+
+    <template v-else>
+      <!-- Hero Section -->
+      <section v-if="nextExpiringDomain?.expiryDate" class="max-w-5xl mx-auto">
+        <CountdownHero
+          :name="nextExpiringDomain.name"
+          :product-name="nextExpiringDomain.productName"
+          :certificate-type="nextExpiringDomain.certificateType"
+          :issuer="nextExpiringDomain.issuer"
+          :pricing="nextExpiringDomain.pricing"
+          :billing-cycle="nextExpiringDomain.billingCycle"
+          :expiry-date="nextExpiringDomain.expiryDate ?? ''"
         />
-      </transition>
-
-      <!-- Secondary Section for other domains -->
-      <section v-if="domainStore.sortedDomains.length > 1" class="mt-12 pb-24">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-xs font-bold text-zinc-400 uppercase tracking-[0.2em]">Monitored Domains</h2>
-          <div class="h-[1px] flex-grow mx-6 bg-zinc-100"></div>
-          <span class="text-xs font-bold text-zinc-400 tabular-nums">
-            {{ domainStore.sortedDomains.length }} Total
-          </span>
-        </div>
-
-        <div class="grid grid-cols-1 gap-4">
-          <transition-group name="list">
-            <DomainCard 
-              v-for="domain in domainStore.sortedDomains.slice(1)" 
-              :key="domain.id"
-              :name="domain.name"
-              :expiry-date="domain.expiryDate"
-            />
-          </transition-group>
-        </div>
       </section>
 
-      <!-- Empty State -->
-      <div v-if="domainStore.domains.length === 0" class="flex flex-col items-center justify-center py-48 opacity-30">
-        <div class="w-12 h-12 rounded-full border-2 border-zinc-200 border-dashed animate-[spin_10s_linear_infinite]"></div>
-        <p class="mt-6 text-sm font-medium">Listening for certificates...</p>
+      <!-- Secondary Domain List -->
+      <section class="max-w-5xl mx-auto">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xl font-display font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Monitored Domains</h2>
+          <div class="flex items-center gap-4">
+            <span v-if="lastRefreshed" class="text-[10px] text-zinc-400 font-medium hidden sm:block">
+              Updated {{ lastRefreshed ? new Date(lastRefreshed).toLocaleString('en-MY') : '' }}
+            </span>
+            <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
+              {{ domains.length }} Total
+            </span>
+          </div>
+        </div>
+
+        <div class="grid gap-4">
+          <DomainCard
+            v-for="domain in secondaryDomains"
+            :key="domain.id"
+            v-bind="domain"
+          />
+        </div>
+      </section>
+    </template>
+
+    <!-- Footer Stats -->
+    <section class="max-w-5xl mx-auto pt-12">
+      <!-- Network Health -->
+      <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm p-8 rounded-3xl border border-white/60 dark:border-zinc-800 flex items-center justify-between group cursor-default">
+        <div>
+          <p class="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-4">Network Health</p>
+          <h3 class="text-4xl font-display font-bold text-teal-500 mb-1">99.9%</h3>
+          <p class="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest">Uptime Certificate Path</p>
+        </div>
+        <div class="flex items-end gap-1.5 h-12">
+          <div v-for="h in [20, 40, 30, 60, 50, 80]" :key="h"
+               class="w-1.5 bg-teal-200 dark:bg-zinc-700 rounded-full transition-all group-hover:bg-teal-500"
+               :style="{ height: `${h}%` }">
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <style scoped>
-.dashboard-container {
-  font-family: 'Inter', sans-serif;
-}
-
-/* Animations */
-.fade-slide-enter-active,
-.fade-slide-leave-active {
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.fade-slide-enter-from {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.list-enter-active,
-.list-leave-active {
-  transition: all 0.5s ease;
-}
-
-.list-enter-from {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.list-move {
-  transition: transform 0.5s ease;
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
 }
 </style>
-

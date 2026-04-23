@@ -1,0 +1,53 @@
+[
+  {
+    "id": "mpkk-gov-my-wildcard",
+    "name": "*.mpkk.gov.my",
+    "checkHost": "ksp.mpkk.gov.my",
+    "productName": "SSL Certificates",
+    "certificateType": "Essential Wildcard SSL",
+    "pricing": "RM539.00",
+    "billingCycle": "Annually",
+    "fallbackExpiryDate": "2026-03-10T00:00:00+08:00",
+    "fallbackIssuer": "Sectigo (formerly Comodo CA)"
+  },
+  {
+    "id": "skp-mpkubangpasu-gov-my",
+    "name": "skp.mpkubangpasu.gov.my",
+    "checkHost": "skp.mpkubangpasu.gov.my",
+    "productName": "SSL Certificates",
+    "certificateType": "Essential SSL",
+    "pricing": "RM159.00",
+    "billingCycle": "Annually"
+  },
+  {
+    "id": "skpadmin-mpkubangpasu-gov-my",
+    "name": "skpadmin.mpkubangpasu.gov.my",
+    "checkHost": "skpadmin.mpkubangpasu.gov.my",
+    "productName": "SSL Certificates",
+    "certificateType": "Essential SSL",
+    "pricing": "RM159.00",
+    "billingCycle": "Annually"
+  },
+  {
+    "id": "htpsmartsolution-com-my-wildcard",
+    "name": "*.htpsmartsolution.com.my",
+    "checkHost": "htpsmartsolution.com.my",
+    "productName": "SSL Certificates",
+    "certificateType": "Essential Wildcard SSL",
+    "pricing": "RM539.00",
+    "billingCycle": "Annually",
+    "fallbackExpiryDate": "2026-08-12T07:59:59+08:00",
+    "fallbackIssuer": "Sectigo (formerly Comodo CA)"
+  },
+  {
+    "id": "penang-my-wildcard",
+    "name": "*.penang.my",
+    "checkHost": "psp.penang.my",
+    "productName": "SSL Certificates",
+    "certificateType": "Essential Wildcard SSL",
+    "pricing": "RM539.00",
+    "billingCycle": "Annually",
+    "fallbackExpiryDate": "2026-09-15T07:59:59+08:00",
+    "fallbackIssuer": "Sectigo (formerly Comodo CA)"
+  }
+]

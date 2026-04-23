@@ -5,6 +5,8 @@
   --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
 }
 
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #fdfdfd;
   --foreground: #1a1c1c;
@@ -12,10 +14,16 @@
   --coral-500: #fb7185;
 }
 
+.dark {
+  --background: #09090b;
+  --foreground: #f4f4f5;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta);
+  transition: background-color 0.3s, color 0.3s;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

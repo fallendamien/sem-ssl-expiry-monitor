@@ -14,7 +14,8 @@
       "Read(//e/My Drive/antigravity/.agent-templates/workspace/rules/**)",
       "Read(//c/Users/Zamri/.gemini/.agent-templates/workspace/skills/frontend-design/**)",
       "Read(//e/My Drive/antigravity/.agent-templates/workspace/skills/frontend-design/**)",
-      "PowerShell(python \"$env:USERPROFILE\\\\.gemini\\\\.agent-templates\\\\scripts\\\\compile-agents-md.py\" 2>&1)"
+      "PowerShell(python \"$env:USERPROFILE\\\\.gemini\\\\.agent-templates\\\\scripts\\\\compile-agents-md.py\" 2>&1)",
+      "Bash(npm run *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Zamri\\.gemini\\.agent-templates\\scripts",
