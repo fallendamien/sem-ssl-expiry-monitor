@@ -3,10 +3,13 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "css.lint.unknownAtRules": "ignore",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "files.associations": {
     "**/.claude/skills/**/*.md": "markdown",
-    "**/.agents/skills/**/*.md": "markdown"
-  },
-  "css.lint.unknownAtRules": "ignore",
-  "typescript.tsdk": "node_modules/typescript/lib"
+    "**/.agents/skills/**/*.md": "markdown",
+    "**/.windsurf/skills/**/*.md": "markdown",
+    "**/.windsurf/rules/**/*.md": "markdown",
+    "**/.codex/skills/**/*.md": "markdown"
+  }
 }
