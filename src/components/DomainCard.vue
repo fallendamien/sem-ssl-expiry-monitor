@@ -38,8 +38,11 @@ const dueDateLabel = computed(() => {
   return new Intl.DateTimeFormat('en-MY', {
     day: '2-digit',
     month: '2-digit',
-    timeZone: 'Asia/Kuala_Lumpur',
     year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'Asia/Kuala_Lumpur',
   }).format(new Date(props.expiryDate));
 });
 // useRed: true for actual warning/critical domains AND the runner-up position
@@ -66,10 +69,15 @@ const detailedTime = computed(() => {
 </script>
 
 <template>
-  <div class="backdrop-blur-sm p-5 rounded-2xl border shadow-[0_4px_20px_rgb(0,0,0,0.01)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.03)] transition-all group"
-       :class="useRed && !isWarning
-         ? 'bg-rose-50/60 dark:bg-rose-950/10 border-rose-200/60 dark:border-rose-900/40 hover:bg-rose-50/80'
-         : 'bg-white/40 dark:bg-zinc-900/40 border-white/60 dark:border-zinc-800 dark:hover:bg-zinc-900/60'">
+  <div class="backdrop-blur-sm p-5 rounded-2xl border transition-all"
+       :class="[
+         useRed && !isWarning
+           ? 'bg-rose-50/60 dark:bg-rose-950/10 border-rose-200/60 dark:border-rose-900/40'
+           : 'bg-white/40 dark:bg-zinc-900/40 border-white/60 dark:border-zinc-800',
+         !isRunnerUp && 'group shadow-[0_4px_20px_rgb(0,0,0,0.01)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.03)]',
+         !isRunnerUp && !(useRed && !isWarning) && 'dark:hover:bg-zinc-900/60',
+         !isRunnerUp && useRed && !isWarning && 'hover:bg-rose-50/80',
+       ]">
     <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-6">
       <!-- Domain Info -->
       <div class="flex items-center gap-4 flex-1">
@@ -81,7 +89,7 @@ const detailedTime = computed(() => {
         </div>
 
         <div>
-          <h3 class="font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">{{ name }}</h3>
+          <h3 class="font-bold text-zinc-900 dark:text-zinc-100 transition-colors" :class="!isRunnerUp && 'group-hover:text-teal-600 dark:group-hover:text-teal-400'">{{ name }}</h3>
           <p class="mt-0.5 text-[11px] font-semibold text-zinc-500 dark:text-zinc-400">
             {{ productName }} - {{ issuer }} {{ certificateType }}
           </p>
@@ -93,7 +101,10 @@ const detailedTime = computed(() => {
             <span class="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">
               {{ pricing }} / {{ billingCycle }}
             </span>
-            <span class="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">
+            <span class="inline-flex items-center gap-1 text-[10px] text-zinc-400/80 dark:text-zinc-500/80 font-semibold">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
               Due {{ dueDateLabel }}
             </span>
           </div>

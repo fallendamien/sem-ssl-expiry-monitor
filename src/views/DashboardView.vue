@@ -91,7 +91,7 @@ const timeFormat = ref<TimeFormat>('days')
         </div>
         <div class="flex items-end gap-1.5 h-12">
           <div v-for="h in [20, 40, 30, 60, 50, 80]" :key="h"
-               class="w-1.5 bg-teal-200 dark:bg-zinc-700 rounded-full transition-all group-hover:bg-teal-500"
+               class="w-1.5 bg-teal-400 dark:bg-teal-500 rounded-full transition-all"
                :style="{ height: `${h}%` }">
           </div>
         </div>

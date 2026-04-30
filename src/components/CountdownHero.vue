@@ -14,6 +14,19 @@ const props = defineProps<{
 
 const { timeRemaining } = useCountdown(props.expiryDate)
 
+const formattedDueDate = computed(() => {
+  if (!props.expiryDate) return ''
+  return new Intl.DateTimeFormat('en-MY', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'Asia/Kuala_Lumpur',
+  }).format(new Date(props.expiryDate))
+})
+
 const timerBlocks = computed(() => ({
   months: timeRemaining.value.months,
   days: timeRemaining.value.days,
@@ -52,13 +65,23 @@ const timerBlocks = computed(() => ({
     <div class="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6 mb-16 max-w-4xl mx-auto relative">
       <div v-for="(val, unit) in timerBlocks" :key="unit"
            class="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md rounded-4xl p-8 border border-white dark:border-zinc-800 shadow-[0_12px_40px_rgba(0,0,0,0.03)] flex flex-col items-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-        <span class="text-5xl lg:text-6xl font-display font-black text-zinc-900 dark:text-white mb-3 tabular-nums leading-none tracking-tighter group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+        <span class="text-5xl lg:text-6xl font-display font-black text-zinc-900/70 dark:text-white/70 mb-3 tabular-nums leading-none tracking-tighter transition-colors">
           {{ String(val).padStart(2, '0') }}
         </span>
-        <span class="text-[9px] font-black text-zinc-400 dark:text-zinc-500 uppercase tracking-[0.3em] group-hover:text-teal-500/60 transition-colors">
+        <span class="text-[9px] font-black text-teal-500/60 dark:text-teal-400/50 uppercase tracking-[0.3em] transition-colors">
           {{ unit }}
         </span>
       </div>
+    </div>
+
+    <!-- Due Date -->
+    <div v-if="formattedDueDate" class="flex justify-center mb-12">
+      <span class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-teal-50/80 dark:bg-teal-950/20 border border-teal-200/60 dark:border-teal-800/40 shadow-sm shadow-teal-500/5">
+        <svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <span class="text-xs font-bold text-teal-700 dark:text-teal-300 tracking-wide">Expires {{ formattedDueDate }}</span>
+      </span>
     </div>
 
     <!-- Action Buttons -->
