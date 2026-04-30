@@ -50,7 +50,7 @@ const timerBlocks = computed(() => ({
     </div>
 
     <!-- Domain Info -->
-    <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-zinc-900 dark:text-white tracking-tight mb-4 break-words leading-[0.9]">
+    <h1 class="text-[1.6rem] sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-zinc-900 dark:text-white tracking-tight mb-4 break-all sm:break-words leading-[0.95]">
       {{ name }}
     </h1>
     <p class="text-zinc-500 dark:text-zinc-400 font-bold mb-14 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-widest">
