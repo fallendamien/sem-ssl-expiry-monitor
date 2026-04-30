@@ -13,7 +13,7 @@ const timeFormat = ref<TimeFormat>('days')
 </script>
 
 <template>
-  <div class="p-8 space-y-12 transition-colors duration-300">
+  <div class="px-4 py-6 sm:p-8 space-y-8 sm:space-y-12 transition-colors duration-300">
     <!-- Loading State -->
     <div v-if="isLoading" class="flex flex-col items-center justify-center py-24 gap-4 text-zinc-400">
       <div class="w-8 h-8 border-2 border-zinc-200 dark:border-zinc-800 border-t-teal-500 rounded-full animate-spin"></div>
@@ -43,7 +43,7 @@ const timeFormat = ref<TimeFormat>('days')
 
       <!-- Secondary Domain List -->
       <section class="max-w-5xl mx-auto">
-        <div class="flex items-center justify-between mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0 mb-6 sm:mb-8">
           <h2 class="text-xl font-display font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Monitored Domains</h2>
           <div class="flex items-center gap-4">
             <span v-if="lastRefreshed" class="text-[10px] text-zinc-400 font-medium hidden sm:block">
@@ -83,7 +83,7 @@ const timeFormat = ref<TimeFormat>('days')
     <!-- Footer Stats -->
     <section class="max-w-5xl mx-auto pt-12">
       <!-- Network Health -->
-      <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm p-8 rounded-3xl border border-white/60 dark:border-zinc-800 flex items-center justify-between group cursor-default">
+      <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm p-5 sm:p-8 rounded-3xl border border-white/60 dark:border-zinc-800 flex items-center justify-between group cursor-default">
         <div>
           <p class="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-4">Network Health</p>
           <h3 class="text-4xl font-display font-bold text-teal-500 mb-1">99.9%</h3>

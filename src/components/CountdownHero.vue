@@ -37,7 +37,7 @@ const timerBlocks = computed(() => ({
 </script>
 
 <template>
-  <div class="relative py-16 px-8 text-center max-w-5xl mx-auto overflow-hidden">
+  <div class="relative py-10 sm:py-16 px-4 sm:px-8 text-center max-w-5xl mx-auto overflow-hidden">
     <!-- Subtle Background Glow -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/5 dark:bg-teal-400/5 blur-[120px] rounded-full -z-10 animate-pulse"></div>
 
@@ -50,7 +50,7 @@ const timerBlocks = computed(() => ({
     </div>
 
     <!-- Domain Info -->
-    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-black text-zinc-900 dark:text-white tracking-tight mb-4 wrap-break-word leading-[0.9]">
+    <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-zinc-900 dark:text-white tracking-tight mb-4 break-words leading-[0.9]">
       {{ name }}
     </h1>
     <p class="text-zinc-500 dark:text-zinc-400 font-bold mb-14 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-widest">
@@ -62,10 +62,10 @@ const timerBlocks = computed(() => ({
     </p>
 
     <!-- Countdown Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6 mb-16 max-w-4xl mx-auto relative">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 mb-12 sm:mb-16 max-w-4xl mx-auto relative">
       <div v-for="(val, unit) in timerBlocks" :key="unit"
-           class="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md rounded-4xl p-8 border border-white dark:border-zinc-800 shadow-[0_12px_40px_rgba(0,0,0,0.03)] flex flex-col items-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-        <span class="text-5xl lg:text-6xl font-display font-black text-zinc-900/70 dark:text-white/70 mb-3 tabular-nums leading-none tracking-tighter transition-colors">
+           class="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl sm:rounded-4xl p-5 sm:p-8 border border-white dark:border-zinc-800 shadow-[0_12px_40px_rgba(0,0,0,0.03)] flex flex-col items-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+        <span class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-zinc-900/70 dark:text-white/70 mb-2 sm:mb-3 tabular-nums leading-none tracking-tighter transition-colors">
           {{ String(val).padStart(2, '0') }}
         </span>
         <span class="text-[9px] font-black text-teal-500/60 dark:text-teal-400/50 uppercase tracking-[0.3em] transition-colors">

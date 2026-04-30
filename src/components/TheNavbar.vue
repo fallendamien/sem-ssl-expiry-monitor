@@ -32,10 +32,10 @@ onMounted(() => {
 
 <template>
   <header class="h-16 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800 sticky top-0 z-30 transition-colors duration-300">
-    <div class="max-w-5xl mx-auto px-8 h-full flex items-center justify-between">
+    <div class="max-w-5xl mx-auto px-4 sm:px-8 h-full flex items-center justify-between">
       <div class="flex items-center gap-10">
         <div class="flex items-center gap-3 group cursor-pointer">
-          <div class="w-9 h-9 bg-linear-to-br from-teal-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-9 h-9 shrink-0 bg-linear-to-br from-teal-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:scale-105 transition-transform">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L3 6.5v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12v-5L12 2z" />
               <circle cx="12" cy="12" r="4" stroke-width="1.5" />
@@ -46,7 +46,7 @@ onMounted(() => {
           <div class="flex flex-col">
             <h1 class="text-sm font-black text-zinc-900 dark:text-white tracking-tighter leading-none flex items-center gap-1.5">
               SEM <span class="w-1 h-1 bg-teal-500 rounded-full"></span>
-              <span class="text-zinc-400 font-bold uppercase text-[10px] tracking-widest">SSL Expiry Monitor</span>
+              <span class="text-zinc-400 font-bold uppercase text-[10px] tracking-widest hidden sm:inline">SSL Expiry Monitor</span>
             </h1>
           </div>
         </div>
@@ -58,7 +58,7 @@ onMounted(() => {
         </nav>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 sm:gap-4">
         <!-- Dark Mode Toggle -->
         <button @click="toggleDark" class="p-2 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors focus:outline-none cursor-pointer" title="Toggle Theme">
           <svg v-if="!isDark" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@ onMounted(() => {
           <span class="absolute top-2 right-2 w-2 h-2 bg-rose-500 border-2 border-white dark:border-zinc-900 rounded-full"></span>
         </button>
         
-        <button class="p-2 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer">
+        <button class="p-2 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer hidden sm:block">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
