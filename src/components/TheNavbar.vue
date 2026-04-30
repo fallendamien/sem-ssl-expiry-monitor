@@ -45,9 +45,10 @@ onMounted(() => {
           </div>
           <div class="flex flex-col">
             <h1 class="text-sm font-black text-zinc-900 dark:text-white tracking-tighter leading-none flex items-center gap-1.5">
-              SEM <span class="w-1 h-1 bg-teal-500 rounded-full"></span>
+              SEM <span class="w-1 h-1 bg-teal-500 rounded-full hidden sm:inline-block"></span>
               <span class="text-zinc-400 font-bold uppercase text-[10px] tracking-widest hidden sm:inline">SSL Expiry Monitor</span>
             </h1>
+            <span class="text-zinc-400 font-bold uppercase text-[8px] tracking-widest sm:hidden">SSL Expiry Monitor</span>
           </div>
         </div>
         
