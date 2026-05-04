@@ -27,9 +27,8 @@ dist-ssr
 .agent
 .agents
 
-# Agentic symlink folders (machine-specific, not portable)
-.windsurf/rules
-.windsurf/skills
-.claude/skills/
-.claude/settings.local.json
+# Agentic AI folders (machine-specific symlinks, not portable across machines)
+# Keep: AGENTS.md, WINDSURF.md, CLAUDE.md, .codex/instructions.md (portable text files)
+.windsurf/
+.claude/
 .codex/skills/
