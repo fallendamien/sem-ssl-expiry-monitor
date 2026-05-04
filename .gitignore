@@ -26,3 +26,10 @@ dist-ssr
 .forensics
 .agent
 .agents
+
+# Agentic symlink folders (machine-specific, not portable)
+.windsurf/rules
+.windsurf/skills
+.claude/skills/
+.claude/settings.local.json
+.codex/skills/
