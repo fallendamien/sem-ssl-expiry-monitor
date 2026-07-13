@@ -16,9 +16,8 @@ const props = defineProps<{
 }>();
 
 const daysRemaining = computed(() => {
-  if (props.daysLeft !== undefined) return props.daysLeft;
   if (!props.expiryDate) return null;
-  const diff = new Date(props.expiryDate).getTime() - new Date().getTime();
+  const diff = new Date(props.expiryDate).getTime() - Date.now();
   return Math.ceil(diff / (1000 * 60 * 60 * 24));
 });
 
