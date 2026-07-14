@@ -17,7 +17,9 @@
     "productName": "SSL Certificates",
     "certificateType": "Essential SSL",
     "pricing": "RM318.00",
-    "billingCycle": "Annually"
+    "billingCycle": "Annually",
+    "fallbackExpiryDate": "2027-01-24T07:59:59+08:00",
+    "fallbackIssuer": "Sectigo Limited"
   },
   {
     "id": "htpsmartsolution-com-my-wildcard",
