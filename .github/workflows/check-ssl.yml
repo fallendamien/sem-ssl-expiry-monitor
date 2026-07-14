@@ -1,0 +1,47 @@
+name: Daily SSL Check
+
+on:
+  schedule:
+    # Run at 8:00 AM MYT (00:00 UTC) every day
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write # Needed to auto-commit updated ssl-data.json
+
+jobs:
+  check-ssl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run SSL checker
+        run: node scripts/ssl-checker.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet public/ssl-data.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/ssl-data.json
+          git commit -m "chore(data): auto-refresh SSL certificate data
+
+- Run ssl-checker.js via GitHub Actions cron
+- Update ssl-data.json with latest live certificate expiry dates"
+          git push
