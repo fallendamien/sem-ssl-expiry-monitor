@@ -3,7 +3,7 @@ name: Daily SSL Check
 on:
   schedule:
     # Run at 8:00 AM MYT (00:00 UTC) every day
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Run SSL checker
         run: node scripts/ssl-checker.js
@@ -40,8 +40,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/ssl-data.json
-          git commit -m "chore(data): auto-refresh SSL certificate data
-
-- Run ssl-checker.js via GitHub Actions cron
-- Update ssl-data.json with latest live certificate expiry dates"
+          git commit -m "chore(data): auto-refresh SSL certificate data" --allow-empty
           git push
