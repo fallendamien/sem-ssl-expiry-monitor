@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T01:09:57.397Z",
+  "generatedAt": "2026-08-20T06:19:38.693Z",
   "successCount": 5,
   "failCount": 0,
   "domains": [
@@ -14,7 +14,7 @@
       "status": "Active",
       "expiryDate": "2027-03-13T23:59:59.000Z",
       "daysLeft": 206,
-      "lastChecked": "2026-08-20T01:09:55.125Z",
+      "lastChecked": "2026-08-20T06:19:38.497Z",
       "checkHost": "ksp.mpkk.gov.my",
       "source": "live",
       "error": null
@@ -30,7 +30,7 @@
       "status": "Active",
       "expiryDate": "2027-01-23T23:59:59.000Z",
       "daysLeft": 157,
-      "lastChecked": "2026-08-20T01:09:55.686Z",
+      "lastChecked": "2026-08-20T06:19:38.559Z",
       "checkHost": "skp.mpkubangpasu.gov.my",
       "source": "live",
       "error": null
@@ -46,7 +46,7 @@
       "status": "Active",
       "expiryDate": "2027-01-23T23:59:59.000Z",
       "daysLeft": 157,
-      "lastChecked": "2026-08-20T01:09:56.256Z",
+      "lastChecked": "2026-08-20T06:19:38.612Z",
       "checkHost": "skpadmin.mpkubangpasu.gov.my",
       "source": "live",
       "error": null
@@ -56,15 +56,15 @@
       "name": "*.htpsmartsolution.com.my",
       "productName": "SSL Certificates",
       "certificateType": "Essential Wildcard SSL",
-      "issuer": "Sectigo (formerly Comodo CA)",
+      "issuer": "Sectigo Limited",
       "pricing": "RM539.00",
       "billingCycle": "Annually",
-      "status": "Expired",
-      "expiryDate": "2026-08-11T23:59:59.000Z",
-      "daysLeft": -8,
-      "lastChecked": "2026-08-20T01:09:56.627Z",
-      "checkHost": "htpsmartsolution.com.my",
-      "source": "fallback",
+      "status": "Active",
+      "expiryDate": "2027-02-16T23:59:59.000Z",
+      "daysLeft": 181,
+      "lastChecked": "2026-08-20T06:19:38.646Z",
+      "checkHost": "pspstaging.htpsmartsolution.com.my",
+      "source": "live",
       "error": null
     },
     {
@@ -78,7 +78,7 @@
       "status": "Critical",
       "expiryDate": "2026-09-14T23:59:59.000Z",
       "daysLeft": 26,
-      "lastChecked": "2026-08-20T01:09:57.397Z",
+      "lastChecked": "2026-08-20T06:19:38.693Z",
       "checkHost": "psp.penang.my",
       "source": "live",
       "error": null

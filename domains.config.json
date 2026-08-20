@@ -35,12 +35,12 @@
   {
     "id": "htpsmartsolution-com-my-wildcard",
     "name": "*.htpsmartsolution.com.my",
-    "checkHost": "htpsmartsolution.com.my",
+    "checkHost": "pspstaging.htpsmartsolution.com.my",
     "productName": "SSL Certificates",
     "certificateType": "Essential Wildcard SSL",
     "pricing": "RM539.00",
     "billingCycle": "Annually",
-    "fallbackExpiryDate": "2026-08-12T07:59:59+08:00",
+    "fallbackExpiryDate": "2027-02-17T07:59:59+08:00",
     "fallbackIssuer": "Sectigo (formerly Comodo CA)"
   },
   {
