@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T03:05:03.369Z",
+  "generatedAt": "2026-09-08T03:14:18.927Z",
   "successCount": 5,
   "failCount": 0,
   "domains": [
@@ -13,8 +13,8 @@
       "billingCycle": "Annually",
       "status": "Active",
       "expiryDate": "2027-03-13T23:59:59.000Z",
-      "daysLeft": 188,
-      "lastChecked": "2026-09-07T03:05:00.284Z",
+      "daysLeft": 187,
+      "lastChecked": "2026-09-08T03:14:15.711Z",
       "checkHost": "ksp.mpkk.gov.my",
       "source": "live",
       "error": null
@@ -29,8 +29,8 @@
       "billingCycle": "Annually",
       "status": "Active",
       "expiryDate": "2027-01-23T23:59:59.000Z",
-      "daysLeft": 139,
-      "lastChecked": "2026-09-07T03:05:01.045Z",
+      "daysLeft": 138,
+      "lastChecked": "2026-09-08T03:14:16.468Z",
       "checkHost": "skp.mpkubangpasu.gov.my",
       "source": "live",
       "error": null
@@ -45,8 +45,8 @@
       "billingCycle": "Annually",
       "status": "Active",
       "expiryDate": "2027-01-23T23:59:59.000Z",
-      "daysLeft": 139,
-      "lastChecked": "2026-09-07T03:05:01.807Z",
+      "daysLeft": 138,
+      "lastChecked": "2026-09-08T03:14:17.215Z",
       "checkHost": "skpadmin.mpkubangpasu.gov.my",
       "source": "live",
       "error": null
@@ -61,8 +61,8 @@
       "billingCycle": "Annually",
       "status": "Active",
       "expiryDate": "2027-02-16T23:59:59.000Z",
-      "daysLeft": 163,
-      "lastChecked": "2026-09-07T03:05:02.324Z",
+      "daysLeft": 162,
+      "lastChecked": "2026-09-08T03:14:17.850Z",
       "checkHost": "pspstaging.htpsmartsolution.com.my",
       "source": "live",
       "error": null
@@ -77,8 +77,8 @@
       "billingCycle": "Annually",
       "status": "Critical",
       "expiryDate": "2026-09-14T23:59:59.000Z",
-      "daysLeft": 8,
-      "lastChecked": "2026-09-07T03:05:03.369Z",
+      "daysLeft": 7,
+      "lastChecked": "2026-09-08T03:14:18.927Z",
       "checkHost": "psp.penang.my",
       "source": "live",
       "error": null
