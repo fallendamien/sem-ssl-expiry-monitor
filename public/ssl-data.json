@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T03:22:35.050Z",
+  "generatedAt": "2026-10-26T03:24:28.767Z",
   "successCount": 5,
   "failCount": 0,
   "domains": [
@@ -13,8 +13,8 @@
       "billingCycle": "Annually",
       "status": "Active",
       "expiryDate": "2027-03-13T23:59:59.000Z",
-      "daysLeft": 140,
-      "lastChecked": "2026-10-25T03:22:32.062Z",
+      "daysLeft": 139,
+      "lastChecked": "2026-10-26T03:24:26.076Z",
       "checkHost": "ksp.mpkk.gov.my",
       "source": "live",
       "error": null
@@ -27,10 +27,10 @@
       "issuer": "Sectigo Limited",
       "pricing": "RM318.00",
       "billingCycle": "Annually",
-      "status": "Active",
+      "status": "Warning",
       "expiryDate": "2027-01-23T23:59:59.000Z",
-      "daysLeft": 91,
-      "lastChecked": "2026-10-25T03:22:32.806Z",
+      "daysLeft": 90,
+      "lastChecked": "2026-10-26T03:24:26.736Z",
       "checkHost": "skp.mpkubangpasu.gov.my",
       "source": "live",
       "error": null
@@ -43,10 +43,10 @@
       "issuer": "Sectigo Limited",
       "pricing": "RM318.00",
       "billingCycle": "Annually",
-      "status": "Active",
+      "status": "Warning",
       "expiryDate": "2027-01-23T23:59:59.000Z",
-      "daysLeft": 91,
-      "lastChecked": "2026-10-25T03:22:33.528Z",
+      "daysLeft": 90,
+      "lastChecked": "2026-10-26T03:24:27.392Z",
       "checkHost": "skpadmin.mpkubangpasu.gov.my",
       "source": "live",
       "error": null
@@ -61,8 +61,8 @@
       "billingCycle": "Annually",
       "status": "Active",
       "expiryDate": "2027-02-16T23:59:59.000Z",
-      "daysLeft": 115,
-      "lastChecked": "2026-10-25T03:22:34.027Z",
+      "daysLeft": 114,
+      "lastChecked": "2026-10-26T03:24:27.856Z",
       "checkHost": "pspstaging.htpsmartsolution.com.my",
       "source": "live",
       "error": null
@@ -77,8 +77,8 @@
       "billingCycle": "Annually",
       "status": "Active",
       "expiryDate": "2027-03-25T23:59:59.000Z",
-      "daysLeft": 152,
-      "lastChecked": "2026-10-25T03:22:35.050Z",
+      "daysLeft": 151,
+      "lastChecked": "2026-10-26T03:24:28.767Z",
       "checkHost": "psp.penang.my",
       "source": "live",
       "error": null
